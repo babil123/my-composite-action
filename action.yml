@@ -1,0 +1,17 @@
+name: "My Composite Action"
+description: "A sample composite GitHub Action"
+author: "Babil"
+
+inputs:
+  message:
+    description: "Message to print"
+    required: true
+    default: "Hello from composite action"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print message
+      run: echo "${{ inputs.message }}"
+      shell: bash
+
